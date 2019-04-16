@@ -1,0 +1,11 @@
+C:\Users\admin\source\repos\BridgeLabz_2019\Algorithm Programs\Algorithm Based Program\Algorithm Based Program\obj\Debug\netcoreapp2.1\Algorithm Based Program.csprojAssemblyReference.cache
+C:\Users\admin\source\repos\BridgeLabz_2019\Algorithm Programs\Algorithm Based Program\Algorithm Based Program\obj\Debug\netcoreapp2.1\Algorithm Based Program.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\BridgeLabz_2019\Algorithm Programs\Algorithm Based Program\Algorithm Based Program\obj\Debug\netcoreapp2.1\Algorithm Based Program.AssemblyInfoInputs.cache
+C:\Users\admin\source\repos\BridgeLabz_2019\Algorithm Programs\Algorithm Based Program\Algorithm Based Program\obj\Debug\netcoreapp2.1\Algorithm Based Program.AssemblyInfo.cs
+C:\Users\admin\source\repos\BridgeLabz_2019\Algorithm Programs\Algorithm Based Program\Algorithm Based Program\bin\Debug\netcoreapp2.1\Algorithm Based Program.deps.json
+C:\Users\admin\source\repos\BridgeLabz_2019\Algorithm Programs\Algorithm Based Program\Algorithm Based Program\bin\Debug\netcoreapp2.1\Algorithm Based Program.runtimeconfig.json
+C:\Users\admin\source\repos\BridgeLabz_2019\Algorithm Programs\Algorithm Based Program\Algorithm Based Program\bin\Debug\netcoreapp2.1\Algorithm Based Program.runtimeconfig.dev.json
+C:\Users\admin\source\repos\BridgeLabz_2019\Algorithm Programs\Algorithm Based Program\Algorithm Based Program\bin\Debug\netcoreapp2.1\Algorithm Based Program.dll
+C:\Users\admin\source\repos\BridgeLabz_2019\Algorithm Programs\Algorithm Based Program\Algorithm Based Program\bin\Debug\netcoreapp2.1\Algorithm Based Program.pdb
+C:\Users\admin\source\repos\BridgeLabz_2019\Algorithm Programs\Algorithm Based Program\Algorithm Based Program\obj\Debug\netcoreapp2.1\Algorithm Based Program.dll
+C:\Users\admin\source\repos\BridgeLabz_2019\Algorithm Programs\Algorithm Based Program\Algorithm Based Program\obj\Debug\netcoreapp2.1\Algorithm Based Program.pdb
