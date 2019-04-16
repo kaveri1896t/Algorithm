@@ -6,22 +6,39 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace Algorithm
 {
- using System;
- using System.Collections;
- using System.Collections.Generic;
- using System.Linq;
- using System.Text;
- using System.Threading.Tasks;
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
 
- /// <summary>  
- /// class utility contains multiple methods which has logic to give solutions
- /// </summary>
- public class Utility
- {
-  /// <summary>
-  /// Print array of strings
-  /// </summary>
-  /// <param name="arr">array of strings</param>
+    /// <summary>  
+    /// class utility contains multiple methods which has logic to give solutions
+    /// </summary>
+    public class Utility
+    {
+        /// <summary>
+        /// Calculate day of week on given date
+        /// </summary>
+        /// <param name="d">entered day</param>
+        /// <param name="m">entered month</param>
+        /// <param name="y">entered year</param>
+        /// <returns>integer associated with day of week</returns>
+        public static int Dayofweek(int d, int m, int y)
+        {
+            int y0, d0, m0, x;
+            y0 = y - ((14 - m) / 12);
+            x = y0 + (y0 / 4) - (y0 / 100) + (y0 / 400);
+            m0 = m + (12 * ((14 - m) / 12)) - 2;
+            d0 = (d + x + (31 * m0 / 12)) % 7;
+            return d0;
+        }
+
+        /// <summary>
+        /// Print array of strings
+        /// </summary>
+        /// <param name="arr">array of strings</param>
         public static void PrintArray(string[] arr)
         {
             int n = arr.Length;
@@ -32,9 +49,9 @@ namespace Algorithm
 
             Console.WriteLine();
         }
-
+        
         /// <summary>
-        ///  Temperature (Celsius to Fahrenheit)	
+        /// Temperature Celsius to Fahrenheit	
         /// </summary>
         /// <param name="temp">temperature in Celsius</param>
         public static void CalcFTemp(double temp)
@@ -53,6 +70,26 @@ namespace Algorithm
             double ctemp;
             ctemp = (temp - 32) * 5 / 9;
             Console.WriteLine("Temperature from Fahrenheit to  celsius: " + ctemp);
+        }
+
+        /// <summary>
+        /// Calculate Square root of number using Newton Method
+        /// </summary>
+        /// <param name="c">double number</param>
+        public static void CalSqrtNewton(double c)
+        {
+            ////relative error tolerance
+            double epsilon = 1e-15;
+            ////estimate of the square root of c
+            double t = c;
+            //// repeatedly apply Newton update step until desired precision is achieved
+            while (Math.Abs(t - (c / t)) > epsilon * t)
+            {
+                t = ((c / t) + t) / 2.0;
+            }
+            //// print out the estimate of the square root of c
+            Console.WriteLine("The square root of given number is : ");
+            Console.WriteLine(t);
         }
 
         /// <summary>
@@ -316,17 +353,17 @@ namespace Algorithm
             ////Calculate length of two subarrays
             int n1 = m - l + 1;
             int n2 = r - m;
-            string[] L = new string[n1];
-            string[] R = new string[n2];
+            string[] left = new string[n1];
+            string[] right = new string[n2];
             ////move strings from left of mid in L subarray
             for (int i = 0; i < n1; i++)
             {
-                L[i] = arr[l + i];
+                left[i] = arr[l + i];
             }
             ////move strings from right of mid in R subarray
             for (int j = 0; j < n2; j++)
             {
-                R[j] = arr[m + 1 + j];
+                right[j] = arr[m + 1 + j];
             }
             ////Merge the temporary arrays
             int p = 0, n = 0;
@@ -334,14 +371,14 @@ namespace Algorithm
             int k = l;
             while (p < n1 && n < n2)
             {
-                if (L[p].CompareTo(R[n]) < 0)
+                if (left[p].CompareTo(right[n]) < 0)
                 {
-                    arr[k] = L[p];
+                    arr[k] = left[p];
                     p++;
                 }
                 else
                 {
-                    arr[k] = R[n];
+                    arr[k] = right[n];
                     n++;
                 }
 
@@ -350,14 +387,14 @@ namespace Algorithm
             //// Copy remaining elements of L[] if any 
             while (p < n1)
             {
-                arr[k] = L[p];
+                arr[k] = left[p];
                 p++;
                 k++;
             }
             ////Copy remaining elements of R[] if any */
             while (n < n2)
             {
-                arr[k] = R[n];
+                arr[k] = right[n];
                 n++;
                 k++;
             }
@@ -423,62 +460,24 @@ namespace Algorithm
         }
 
         /// <summary>
-        /// Calculate day of week on given date
-        /// </summary>
-        /// <param name="d">entered day</param>
-        /// <param name="m">entered month</param>
-        /// <param name="y">entered year</param>
-        /// <returns>integer associated with day of week</returns>
-        public static int Dayofweek(int d, int m, int y)
-        {
-            int y0, d0, m0, x;
-            y0 = y - ((14 - m) / 12);
-            x = y0 + (y0 / 4) - (y0 / 100) + (y0 / 400);
-            m0 = m + (12 * ((14 - m) / 12)) - 2;
-            d0 = (d + x + (31 * m0 / 12)) % 7;
-            return d0;
-        }
-
-        /// <summary>
-        /// Calculate Square root of number using Newton Method
-        /// </summary>
-        /// <param name="c">double number</param>
-        public static void CalSqrtNewton(double c)
-        {
-            ////relative error tolerance
-            double epsilon = 1e-15;
-            ////estimate of the square root of c
-            double t = c;
-            //// repeatedly apply Newton update step until desired precision is achieved
-            while (Math.Abs(t - (c / t)) > epsilon * t)
-            {
-                t = ((c / t) + t) / 2.0;
-            }
-            //// print out the estimate of the square root of c
-            Console.WriteLine("The square root of given number is : ");
-            Console.WriteLine(t);
-        }
-
-        /// <summary>
         /// Calculate Monthly Payment 
         /// </summary>
         public void MonthlyPayments()
         {
             //// take input principle amount,
             Console.WriteLine("Enter the principle amount");
-            double P = Convert.ToDouble(Console.ReadLine());
+            double principle = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Enter the year");
-            double Y = Convert.ToDouble(Console.ReadLine());
+            double year = Convert.ToDouble(Console.ReadLine());
             //// takes input from user for interest 
             Console.WriteLine("Enter the interest");
-            double R = Convert.ToDouble(Console.ReadLine());
+            double rate = Convert.ToDouble(Console.ReadLine());
             //// intials the valuse 
-            double n = 12 * Y;
-            double r = R / (12 * 100);
+            double n = 12 * year;
+            double r = rate / (12 * 100);
             //// formula for payments 
-            double payment = (P * r) / (1 - Math.Pow(1 + r, -n));
+            double payment = (principle * r) / (1 - Math.Pow(1 + r, -n));
             Console.WriteLine("The monthly payment is " + payment);
-           
         }
 
         /// <summary>
@@ -502,4 +501,3 @@ namespace Algorithm
         }
     }
 }
-

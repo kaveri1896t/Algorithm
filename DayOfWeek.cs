@@ -29,19 +29,22 @@ namespace Algorithm
                 {
                     Console.WriteLine("Enter the day (dd) : ");
                     day = Convert.ToInt32(Console.ReadLine());
-                } while (day > 31 || day < 1);
+                }
+                while (day > 31 || day < 1);
 
                 do
                 {
                     Console.WriteLine("Enter the month (mm) : ");
                     month = Convert.ToInt32(Console.ReadLine());
-                } while (month > 12 || month < 1);
+                }
+                while (month > 12 || month < 1);
 
                 do
                 {
                     Console.WriteLine("Enter the year (yyyy) : ");
                     year = Convert.ToInt32(Console.ReadLine());
-                } while (year < 1000 || year > 9999);
+                }
+                while (year < 1000 || year > 9999);
 
                 n = Utility.Dayofweek(day, month, year);
                 Console.WriteLine(n);

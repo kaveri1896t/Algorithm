@@ -33,7 +33,7 @@ namespace Algorithm
                 ArrayList list2 = new ArrayList();
                 Console.WriteLine("Enter n : ");
                 n = Convert.ToInt32(Console.ReadLine());
-                list =PrimeNo(n);
+                list = this.PrimeNo(n);
                 Console.WriteLine("Prime numbers are : ");
                 foreach (int j in list)
                 {
@@ -68,7 +68,7 @@ namespace Algorithm
                     Console.WriteLine(i + " ");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }

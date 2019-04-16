@@ -91,7 +91,7 @@ namespace Algorithm
                         case 15:
                             ToBinary tb = new ToBinary();
                             break;
-                        default:
+                        default: 
                             break;
                     }
                 }
